@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap");
+
+:root {
+  --color-active: #1e90ff;
+  --color-disabled: #a0a0a0;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f8fb;
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  width: 350px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-container::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-disabled);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress-bar {
+  height: 2px;
+  width: 0%;
+  background-color: var(--color-active);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-disabled);
+  border: 2px solid var(--color-disabled);
+  background-color: #fff;
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: var(--color-active);
+  color: var(--color-active);
+}
+
+.btn {
+  background-color: var(--color-active);
+  border: 0;
+  color: #fff;
+  font-family: inherit;
+  padding: 8px 30px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.btn:disabled {
+  background-color: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
